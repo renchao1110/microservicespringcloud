@@ -29,3 +29,17 @@ logging:
     org.springframework.security: DEBUG
     com.glodon: DEBUG
     com.glodon.gdmp.dao: DEBUG
+eureka:
+  instance:
+    instance-id: microservice-dept8001 #主机名称：服务名称修改
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+info:
+  app.name: glodon-microservicecloud
+  company.name: www.glodon.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
