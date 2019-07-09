@@ -1,0 +1,35 @@
+server:
+  port: 9527
+
+
+spring:
+  application:
+    name: microservicecloud-zuul-gateway
+
+
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG
+    com.glodon: DEBUG
+    com.glodon.gdmp.dao: DEBUG
+eureka:
+  instance:
+    instance-id: gateway-9527.com
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+info:
+  app.name: glodon-microservicecloud
+  company.name: www.glodon.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+zuul:
+  routes:
+    mydept.serviceId: microservicecloud-dept
+    mydept.path: /mydept/**
+  ignored-services: "*"
+  prefix: /glodon
