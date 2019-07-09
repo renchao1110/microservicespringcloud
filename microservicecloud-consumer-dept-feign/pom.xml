@@ -9,15 +9,25 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <artifactId>microservicecloud-consumer-dept-feign</artifactId>
 
-    <name>microservicecloud-consumer-dept-80</name>
+    <name>microservicecloud-consumer-dept-feign</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
-    <artifactId>microservicecloud-consumer-dept-80</artifactId>
-    <description>部门微服务消费者</description>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+    </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
         <dependency><!-- 自己定义的api -->
             <groupId>com.glodon.springcloud</groupId>
             <artifactId>microservicecloud-api</artifactId>
@@ -59,6 +69,14 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
+        <!--feign-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
+
+
 
     </dependencies>
 
@@ -99,6 +117,10 @@
                 <plugin>
                     <artifactId>maven-site-plugin</artifactId>
                     <version>3.7.1</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>3.0.0</version>
                 </plugin>
             </plugins>
         </pluginManagement>
