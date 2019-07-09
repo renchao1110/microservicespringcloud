@@ -1,6 +1,7 @@
 package com.glodon.springcloud.service;
 
 import com.glodon.springcloud.Dept;
+import com.glodon.springcloud.service.impl.DeptClientServiceFallbackFactory;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +14,7 @@ import java.util.List;
  * @date ：Created in 2019/7/8 16:58
  * @description：${description}
  */
-@FeignClient(value = "MICROSERVICECLOUD-DEPT")
+@FeignClient(value = "MICROSERVICECLOUD-DEPT",fallbackFactory = DeptClientServiceFallbackFactory.class)
 public interface DeptClientService {
     @RequestMapping(value = "/dept/get/{id}",method = RequestMethod.GET)
     Dept get(@PathVariable("id") long id);
