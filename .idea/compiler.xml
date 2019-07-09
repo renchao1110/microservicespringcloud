@@ -11,6 +11,7 @@
         <module name="microservicecloudconsumerdeptfeign" />
         <module name="microservicecloudeureka7001" />
         <module name="microservicecloudproviderdept8001" />
+        <module name="microservicecloudproviderdepthystrix8001" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
